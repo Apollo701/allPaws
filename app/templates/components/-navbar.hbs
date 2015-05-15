@@ -1,3 +1,10 @@
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Log-in</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Sign-up</a></li>
+</ul>
+
 <nav>
   <div class="nav-wrapper">
     <a href="#!" class="brand-logo">All Paws</a>
@@ -7,6 +14,8 @@
       <li><a href="components.html">Adopt a pet</a></li>
       <li><a href="javascript.html">Put up for adoption</a></li>
       <li><a href="mobile.html">About Us</a></li>
+       <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Account<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="sass.html">Home</a></li>
@@ -17,4 +26,7 @@
   </div>
 </nav>
 
-<script>$(".button-collapse").sideNav();</script>
+<script>
+  $(".button-collapse").sideNav();
+  $ (".dropdown-button").dropdown();
+</script>
