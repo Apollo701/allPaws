@@ -3,9 +3,16 @@
 <table>
   <thead>
     <tr>
-        <th data-field="id">Name</th>
-        <th data-field="name">Breed</th>
-        <th data-field="price">Bio</th>
+        <th data-field="name">Name</th>
+        <th data-field="age">Age</th>
+        <th data-field="breed">Breed</th>
+        <th data-field="bio">Bio</th>
+        <th data-field="sex">Sex</th>
+        <th data-field="size">Size</th>
+        <th data-field="trained">Trained</th>
+        <th data-field="animal_friendly">Animal Friendly</th>
+        <th data-field="child_friendly">Child Friendly</th>
+        <th data-field="spayed_or_neutered">Spayed or Neutered</th>
     </tr>
   </thead>
 
@@ -13,8 +20,15 @@
   {{#each dog in model}}
     <tr>
       <td>{{dog.name}}</td>
+      <td>{{dog.age}}</td>
       <td>{{dog.breed}}</td>
       <td>{{dog.bio}}</td>
+      <td>{{dog.sex}}</td>
+      <td>{{dog.size}}</td>
+      <td>{{dog.trained}}</td>
+      <td>{{dog.animalFriendly}}</td>
+      <td>{{dog.childFriendly}}</td>
+      <td>{{dog.spayedOrNeutered}}</td>
     </tr>
   {{/each}}
   </tbody>
