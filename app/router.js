@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('dogs', function() {
     this.route('new');
   });
+  this.route('aboutUs');
 });
 
 export default Router;
