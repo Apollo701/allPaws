@@ -1,6 +1,21 @@
 <h2>Dogs Index</h2>
-<ul>
+
+<table>
+  <thead>
+    <tr>
+        <th data-field="id">Name</th>
+        <th data-field="name">Breed</th>
+        <th data-field="price">Bio</th>
+    </tr>
+  </thead>
+
+  <tbody>
   {{#each dog in model}}
-    <li>{{dog.name}} {{dog.breed}} {{dog.bio}}</li>
+    <tr>
+      <td>{{dog.name}}</td>
+      <td>{{dog.breed}}</td>
+      <td>{{dog.bio}}</td>
+    </tr>
   {{/each}}
-</ul>
+  </tbody>
+</table>
