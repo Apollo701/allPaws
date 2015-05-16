@@ -16,6 +16,7 @@
 </div>
 
   <form {{action "save" on="submit"}}>
+    <h2>{{errorMessage}}</h2>
     <div class="row">
       <div class="input-field col s4">
         <label>Name:
@@ -87,4 +88,6 @@
       </div>
     </div>
   </div> --}}
+  {{md-btn text='Save' icon='mdi-action-favorite' type="submit" value="Save" }}
+  {{md-btn text='Cancel' action="cancel"}}
   </form>
