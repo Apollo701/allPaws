@@ -1,12 +1,18 @@
 <div class="row">
 <h2 class="center">Help find {{model.name}} a home!</h2>
 
-<ul>
+{{!-- <ul>
   <li>{{model.age}}</li>
   <li>{{model.breed}}</li>
   <li>{{model.bio}}</li>
+  <li>{{model.sex}}</li>
+  <li>{{model.size}}</li>
+  <li>{{model.trained}}</li>
+  <li>{{model.child-friendly}}</li>
+  <li>{{model.animal-friendly}}</li>
+  <li>{{model.spayed-or-neutered}}</li>
 
-</ul>
+</ul> --}}
 </div>
 
   <form {{action "save" on="submit"}}>
@@ -27,37 +33,47 @@
         </label>
       </div>
       </div>
-    <div class="row bio-input">
-        <label class="input-field col s11">Bio:
+    <div class="row input-row">
+      <div class="input-field">
+        <label class="col s10">Bio:
         {{input value = model.bio class="validate"}}
         </label>
+      </div>
     </div>
-     <div class="row">
+     <div class="row input-row">
      <div class="col s4">
      <h5>Sex:</h5>
      {{#md-radios
-        selection=radioSelection 
+        selection=model.sex 
         content=radioChoices
         optionValuePath='sex'
         optionLabelPath='text'}}
 
-        <p> {{ md-radio value="male" name="Male" class="with-gap" }} </p>
-        <p> {{ md-radio value="female" name="Female" class="with-gap" }} </p>
+        <p> {{ md-radio value="male" name="Male"  }} </p>
+        <p> {{ md-radio value="female" name="Female" }} </p>
 
         {{/md-radios}}
       </div>
   <div class="col s4">
   <h5>Size:</h5>
+  {{#md-radios
+    selection=model.size
+    content=radioChoices
+    optionValuePath='size'
+    optionLabelPath='text'}}
+
      <p> {{ md-radio value="small" name="Small" class="with-gap" }} </p>
      <p> {{ md-radio value="medium" name="Medium" class="with-gap" }} </p>
-     <p> {{ md-radio value="Large" name="Large" class="with-gap" }} </p>
+     <p> {{ md-radio value="large" name="Large" class="with-gap" }} </p>
+
+     {{/md-radios}}
  </div>
  <div class="col s4">
   <h5>Additional information:</h5>
-    <p> {{ md-check name="Trained" checked=trained }} </p>
-    <p> {{ md-check name="Child friendly" checked=child-friendly }} </p>
-    <p> {{ md-check name="Animal friendly" checked=animal-friendly }} </p>
-    <p> {{ md-check name="Spayed or Neutered" checked=spayed-or-neutered }} </p>
+    <p> {{ md-check name="Trained" checked=model.trained }} </p>
+    <p> {{ md-check name="Child friendly" checked=model.child-friendly }} </p>
+    <p> {{ md-check name="Animal friendly" checked=model.animal-friendly }} </p>
+    <p> {{ md-check name="Spayed or Neutered" checked=model.spayed-or-neutered }} </p>
   </div>
 </div>
    
