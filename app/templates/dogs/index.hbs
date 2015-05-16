@@ -19,16 +19,19 @@
   <tbody>
   {{#each dog in model}}
     <tr>
-      <td>{{dog.name}}</td>
-      <td>{{dog.age}}</td>
-      <td>{{dog.breed}}</td>
-      <td>{{dog.bio}}</td>
-      <td>{{dog.sex}}</td>
-      <td>{{dog.size}}</td>
-      <td>{{dog.trained}}</td>
-      <td>{{dog.animalFriendly}}</td>
-      <td>{{dog.childFriendly}}</td>
-      <td>{{dog.spayedOrNeutered}}</td>
+      {{#link-to 'dogs.show' dog}}
+        <td>{{dog.name}}</td>
+      {{/link-to}}
+        <td>{{dog.age}}</td>
+        <td>{{dog.breed}}</td>
+        <td>{{dog.bio}}</td>
+        <td>{{dog.sex}}</td>
+        <td>{{dog.size}}</td>
+        <td>{{dog.trained}}</td>
+        <td>{{dog.animalFriendly}}</td>
+        <td>{{dog.childFriendly}}</td>
+        <td>{{dog.spayedOrNeutered}}</td>
+
     </tr>
   {{/each}}
   </tbody>
