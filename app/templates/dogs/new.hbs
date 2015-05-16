@@ -1,68 +1,67 @@
+<div class="row">
 <h2 class="center">Help find {{model.name}} a home!</h2>
 
+<ul>
+  <li>{{model.age}}</li>
+  <li>{{model.breed}}</li>
+  <li>{{model.bio}}</li>
 
-<div class="row">
-  <form class="col s12">
+</ul>
+</div>
+
+  <form {{action "save" on="submit"}}>
     <div class="row">
       <div class="input-field col s4">
-        <input id="name" type="text" class="validate">
-        <label for="name">Name</label>
+        <label>Name:
+        {{input value = model.name class="validate"}}
+        </label>
       </div>
       <div class="input-field col s4">
-        <input id="age" type="text" class="validate">
-        <label for="age">Age</label>
+        <label>Age:
+        {{input value = model.age class="validate"}}
+        </label>
       </div>
       <div class="input-field col s4">
-        <input id="breed" type="text" class="validate">
-        <label for="breed">Breed</label>
+        <label>Breed:
+        {{input value = model.breed class="validate"}}
+        </label>
       </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="bio" type="text" class="validate">
-        <label for="bio">Bio</label>
       </div>
+    <div class="row bio-input">
+        <label class="input-field col s11">Bio:
+        {{input value = model.bio class="validate"}}
+        </label>
     </div>
-     <form action="#">
+     <div class="row">
+     <div class="col s4">
      <h5>Sex:</h5>
-     <ul>
-       <li class="sex"><input class="with-gap" name="group1" type="radio" id="male" />
-      <label for="male">Male</label></li>
-      <li class="sex"><input class="with-gap" name="group1" type="radio" id="female" />
-      <label for="female">Female</label></li>
-     </ul>
-  </form>
-  <form action="#">
+     {{#md-radios
+        selection=radioSelection 
+        content=radioChoices
+        optionValuePath='sex'
+        optionLabelPath='text'}}
+
+        <p> {{ md-radio value="male" name="Male" class="with-gap" }} </p>
+        <p> {{ md-radio value="female" name="Female" class="with-gap" }} </p>
+
+        {{/md-radios}}
+      </div>
+  <div class="col s4">
   <h5>Size:</h5>
-     <ul>
-       <li class="size"><input class="with-gap" name="group2" type="radio" id="small" />
-      <label for="small">Small</label></li>
-      <li class="size"><input class="with-gap" name="group2" type="radio" id="medium" />
-      <label for="medium">Medium</label></li>
-      <li class="size"><input class="with-gap" name="group2" type="radio" id="large" />
-      <label for="large">Large</label></li>
-     </ul>
-  </form>
-  <form action="#">
+     <p> {{ md-radio value="small" name="Small" class="with-gap" }} </p>
+     <p> {{ md-radio value="medium" name="Medium" class="with-gap" }} </p>
+     <p> {{ md-radio value="Large" name="Large" class="with-gap" }} </p>
+ </div>
+ <div class="col s4">
   <h5>Additional information:</h5>
-    <p>
-      <input type="checkbox" id="trained" />
-      <label for="trained">Trained</label>
-    </p>
-    <p>
-      <input type="checkbox" id="animal-friendly" />
-      <label for="animal-friendly">Animal Friendly</label>
-    </p>
-    <p>
-      <input type="checkbox" id="child-friendly" />
-      <label for="child-friendly">Child Friendly</label>
-    </p>
-    <p>
-      <input type="checkbox" id="spayed-or-neutered" />
-      <label for="spayed-or-neutered">Spayed or Neutered</label>
-    </p>
-  </form>
-  <form action="#">
+    <p> {{ md-check name="Trained" checked=trained }} </p>
+    <p> {{ md-check name="Child friendly" checked=child-friendly }} </p>
+    <p> {{ md-check name="Animal friendly" checked=animal-friendly }} </p>
+    <p> {{ md-check name="Spayed or Neutered" checked=spayed-or-neutered }} </p>
+  </div>
+</div>
+   
+  {{!--<div class="row">
   <h5>Upload an image:</h5>
     <div class="file-field input-field">
       <input class="file-path validate" type="text"/>
@@ -71,8 +70,5 @@
         <input type="file" />
       </div>
     </div>
+  </div> --}}
   </form>
-    
-
-  </form>
-</div>
