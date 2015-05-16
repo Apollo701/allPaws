@@ -72,9 +72,9 @@
  <div class="col s4">
   <h5>Additional information:</h5>
     <p> {{ md-check name="Trained" checked=model.trained }} </p>
-    <p> {{ md-check name="Child friendly" checked=model.child-friendly }} </p>
-    <p> {{ md-check name="Animal friendly" checked=model.animal-friendly }} </p>
-    <p> {{ md-check name="Spayed or Neutered" checked=model.spayed-or-neutered }} </p>
+    <p> {{ md-check name="Child friendly" checked=model.childFriendly }} </p>
+    <p> {{ md-check name="Animal friendly" checked=model.animalFriendly }} </p>
+    <p> {{ md-check name="Spayed or Neutered" checked=model.spayedOrNeutered }} </p>
   </div>
 </div>
    
@@ -88,6 +88,6 @@
       </div>
     </div>
   </div> --}}
-  {{md-btn text='Save' icon='mdi-action-favorite' type="submit" value="Save" }}
-  {{md-btn text='Cancel' action="cancel"}}
+  <input type="submit" value="Save" />
+  <button {{action "cancel"}}>Cancel</button>
   </form>
