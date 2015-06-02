@@ -1,4 +1,19 @@
 {{partial 'components/navbar'}}
-<div class="container">
-  {{outlet}}
-</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="/bg4.jpg"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <div class="container">
+        {{outlet}}
+      </div>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="/bg3.jpg"></div>
+  </div>
+
+<script>$(document).ready(function(){
+      $('.parallax').parallax();
+    });
+</script>
