@@ -10,5 +10,6 @@ export default DS.Model.extend({
   childFriendly: DS.attr('boolean'),
   bio: DS.attr(),
   sex: DS.attr('string'),
-  spayedOrNeutered: DS.attr('boolean')
+  spayedOrNeutered: DS.attr('boolean'),
+  photo: DS.attr('string')
 });

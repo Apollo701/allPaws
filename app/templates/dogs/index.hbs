@@ -1,56 +1,29 @@
-<h2>Dogs Looking for Homes:</h2>
-      <div class="row">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="/dogs/dog1.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href='#'>This is a link</a>
-            </div>
-          </div>
+<h2>Adopt me!</h2>
+          <div class="row">
+
+  {{#each dog in model}}
+          <div class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{dog.photo}}">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">
+            {{#link-to 'dogs.show' dog}}
+              {{dog.name}}
+            {{/link-to}}
+          <i class="mdi-navigation-more-vert right"></i></span>
+          <p><a href="#">Learn more about me!</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{dog.name}}'s Profile<i class="mdi-navigation-close right"></i></span>
+          <p>Bio: {{dog.bio}}</p>
+          <p>Breed: {{dog.breed}}</p>
+          <p>Sex: {{dog.sex}}</p>
+        </div>
         </div>
       </div>
+          
 
-<table>
-  <thead>
-    <tr>
-        <th data-field="name">Name</th>
-        <th data-field="age">Age</th>
-        <th data-field="breed">Breed</th>
-        <th data-field="bio">Bio</th>
-        <th data-field="sex">Sex</th>
-        <th data-field="size">Size</th>
-        <th data-field="trained">Trained</th>
-        <th data-field="animal_friendly">Animal Friendly</th>
-        <th data-field="child_friendly">Child Friendly</th>
-        <th data-field="spayed_or_neutered">Spayed or Neutered</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  {{#each dog in model}}
-    <tr>
-      {{#link-to 'dogs.show' dog}}
-        <td>{{dog.name}}</td>
-      {{/link-to}}
-        <td>{{dog.age}}</td>
-        <td>{{dog.breed}}</td>
-        <td>{{dog.bio}}</td>
-        <td>{{dog.sex}}</td>
-        <td>{{dog.size}}</td>
-        <td>{{dog.trained}}</td>
-        <td>{{dog.animalFriendly}}</td>
-        <td>{{dog.childFriendly}}</td>
-        <td>{{dog.spayedOrNeutered}}</td>
-
-    </tr>
   {{/each}}
-  </tbody>
-</table>
+    </div>
